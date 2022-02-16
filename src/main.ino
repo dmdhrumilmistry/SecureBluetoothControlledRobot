@@ -6,41 +6,10 @@ AF_DCMotor motor2(2, MOTOR12_1KHZ);
 AF_DCMotor motor3(3, MOTOR34_1KHZ);
 AF_DCMotor motor4(4, MOTOR34_1KHZ);
 
-char command; 
+String command; 
 String passwd = "mypassword";
 
-void setup() 
-{       
-  Serial.begin(9600);  //Set the baud rate to your Bluetooth module.
-}
 
-void loop(){
-  if(Serial.available() > 0){
-    String recvd_passwd = Serial.readStringUntil('/');
-    command = Serial.read(); 
-    Stop(); //initialize with motors stoped
-    //Change pin mode only if new command is different from previous.   
-
-    if (recvd_passwd == passwd){
-      switch(command){
-        case 'F':  
-          forward();
-          break;
-        case 'B':  
-          back();
-          break;
-        case 'L':  
-          left();
-          break;
-        case 'R':
-          right();
-          break;
-     }
-    } else {
-      Serial.println("Invalid Passwd! " + recvd_passwd);
-    } 
-  }
-}
 
 void forward()
 {
@@ -90,7 +59,7 @@ void right()
   motor4.run(BACKWARD); //rotate the motor anti-clockwise
 } 
 
-void Stop()
+void stop_motors()
 {
   motor1.setSpeed(0); //Define minimum velocity
   motor1.run(RELEASE); //stop the motor when release the button
@@ -100,4 +69,30 @@ void Stop()
   motor3.run(RELEASE); //stop the motor when release the button
   motor4.setSpeed(0); //Define minimum velocity
   motor4.run(RELEASE); //stop the motor when release the button
+}
+
+
+void setup() 
+{       
+  Serial.begin(9600);  //Set the baud rate to your Bluetooth module.
+}
+
+void loop(){
+  // command format
+  // passwd/command/
+  if(Serial.available() > 0){
+    String recvd_passwd = Serial.readStringUntil('/');
+    command = Serial.readStringUntil('/');
+    stop_motors(); //initialize with motors stoped
+    //Change pin mode only if new command is different from previous.   
+
+    if (recvd_passwd == passwd){
+      if (command == "F")       forward();
+      else if (command == "B")  back();
+      else if (command == "L")  left();
+      else if (command == "R")  right();
+     } else {
+      Serial.println("Invalid Passwd! " + recvd_passwd);
+    } 
+  }
 }
