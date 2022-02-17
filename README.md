@@ -20,4 +20,4 @@ Many available projects on Bluetooth controlled robots are unsecure, an authoriz
 ## TODO
   - [x] Choose and Add License
   - [ ] Upload Circuit Diagram 
-  - [ ] Upload compiled Android Application
+  - [x] Upload compiled Android Application
