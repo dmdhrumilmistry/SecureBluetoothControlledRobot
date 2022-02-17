@@ -1,10 +1,14 @@
+//Modied By ProfessorHulk And DM Dhrumil Mistry
+//The One and Only Smasher Tech (TOAOST)
+//Install AFMotor.h library before uploading code to Arduino Board
+
 #include <AFMotor.h>
 
 //initial motors pin
-AF_DCMotor motor1(1, MOTOR12_1KHZ); 
-AF_DCMotor motor2(2, MOTOR12_1KHZ); 
-AF_DCMotor motor3(3, MOTOR34_1KHZ);
-AF_DCMotor motor4(4, MOTOR34_1KHZ);
+AF_DCMotor M1(1, MOTOR12_1KHZ); //M1 for Motor 1
+AF_DCMotor M2(2, MOTOR12_1KHZ); //M1 for Motor 2
+AF_DCMotor M3(3, MOTOR34_1KHZ); //M1 for Motor 3 
+AF_DCMotor M4(4, MOTOR34_1KHZ); //M1 for Motor 4
 
 String command; 
 String passwd = "mypassword";
@@ -13,62 +17,62 @@ String passwd = "mypassword";
 
 void forward()
 {
-  motor1.setSpeed(255); //Define maximum velocity
-  motor1.run(FORWARD); //rotate the motor clockwise
-  motor2.setSpeed(255); //Define maximum velocity
-  motor2.run(FORWARD); //rotate the motor clockwise
-  motor3.setSpeed(255);//Define maximum velocity
-  motor3.run(FORWARD); //rotate the motor clockwise
-  motor4.setSpeed(255);//Define maximum velocity
-  motor4.run(FORWARD); //rotate the motor clockwise
+  M1.setSpeed(255); //Define maximum velocity
+  M1.run(FORWARD); //rotate the motor clockwise
+  M2.setSpeed(255); //Define maximum velocity
+  M2.run(FORWARD); //rotate the motor clockwise
+  M3.setSpeed(255);//Define maximum velocity
+  M3.run(FORWARD); //rotate the motor clockwise
+  M4.setSpeed(255);//Define maximum velocity
+  M4.run(FORWARD); //rotate the motor clockwise
 }
 
 void back()
 {
-  motor1.setSpeed(255); //Define maximum velocity
-  motor1.run(BACKWARD); //rotate the motor anti-clockwise
-  motor2.setSpeed(255); //Define maximum velocity
-  motor2.run(BACKWARD); //rotate the motor anti-clockwise
-  motor3.setSpeed(255); //Define maximum velocity
-  motor3.run(BACKWARD); //rotate the motor anti-clockwise
-  motor4.setSpeed(255); //Define maximum velocity
-  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  M1.setSpeed(255); //Define maximum velocity
+  M1.run(BACKWARD); //rotate the motor anti-clockwise
+  M2.setSpeed(255); //Define maximum velocity
+  M2.run(BACKWARD); //rotate the motor anti-clockwise
+  M3.setSpeed(255); //Define maximum velocity
+  M3.run(BACKWARD); //rotate the motor anti-clockwise
+  M4.setSpeed(255); //Define maximum velocity
+  M4.run(BACKWARD); //rotate the motor anti-clockwise
 }
 
 void left()
 {
-  motor1.setSpeed(255); //Define maximum velocity
-  motor1.run(BACKWARD); //rotate the motor anti-clockwise
-  motor2.setSpeed(255); //Define maximum velocity
-  motor2.run(BACKWARD); //rotate the motor anti-clockwise
-  motor3.setSpeed(255); //Define maximum velocity
-  motor3.run(FORWARD);  //rotate the motor clockwise
-  motor4.setSpeed(255); //Define maximum velocity
-  motor4.run(FORWARD);  //rotate the motor clockwise
+  M1.setSpeed(255); //Define maximum velocity
+  M1.run(BACKWARD); //rotate the motor anti-clockwise
+  M2.setSpeed(255); //Define maximum velocity
+  M2.run(BACKWARD); //rotate the motor anti-clockwise
+  M3.setSpeed(255); //Define maximum velocity
+  M3.run(FORWARD);  //rotate the motor clockwise
+  M4.setSpeed(255); //Define maximum velocity
+  M4.run(FORWARD);  //rotate the motor clockwise
 }
 
 void right()
 {
-  motor1.setSpeed(255); //Define maximum velocity
-  motor1.run(FORWARD); //rotate the motor clockwise
-  motor2.setSpeed(255); //Define maximum velocity
-  motor2.run(FORWARD); //rotate the motor clockwise
-  motor3.setSpeed(255); //Define maximum velocity
-  motor3.run(BACKWARD); //rotate the motor anti-clockwise
-  motor4.setSpeed(255); //Define maximum velocity
-  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  M1.setSpeed(255); //Define maximum velocity
+  M1.run(FORWARD); //rotate the motor clockwise
+  M2.setSpeed(255); //Define maximum velocity
+  M2.run(FORWARD); //rotate the motor clockwise
+  M3.setSpeed(255); //Define maximum velocity
+  M3.run(BACKWARD); //rotate the motor anti-clockwise
+  M4.setSpeed(255); //Define maximum velocity
+  M4.run(BACKWARD); //rotate the motor anti-clockwise
 } 
 
 void stop_motors()
 {
-  motor1.setSpeed(0); //Define minimum velocity
-  motor1.run(RELEASE); //stop the motor when release the button
-  motor2.setSpeed(0); //Define minimum velocity
-  motor2.run(RELEASE); //rotate the motor clockwise
-  motor3.setSpeed(0); //Define minimum velocity
-  motor3.run(RELEASE); //stop the motor when release the button
-  motor4.setSpeed(0); //Define minimum velocity
-  motor4.run(RELEASE); //stop the motor when release the button
+  M1.setSpeed(0); //Define minimum velocity
+  M1.run(RELEASE); //stop the motor when release the button
+  M2.setSpeed(0); //Define minimum velocity
+  M2.run(RELEASE); //rotate the motor clockwise
+  M3.setSpeed(0); //Define minimum velocity
+  M3.run(RELEASE); //stop the motor when release the button
+  M4.setSpeed(0); //Define minimum velocity
+  M4.run(RELEASE); //stop the motor when release the button
 }
 
 
