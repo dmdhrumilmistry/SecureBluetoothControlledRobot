@@ -1,9 +1,12 @@
-# SecureBluetoothControlledCar
+# SecureBluetoothControlledRobot
 
 A Secure Bluetooth Controller Car project using Arduino Board.
 
 ## Need of Project
 Many available projects on Bluetooth controlled robots are unsecure, an authorized user can connect to the robot and handle its operations which can be threat in various scenarios. This Project solves this security issue by allowing user to authenticate themselves before executing commands avoiding unauthenticated access to the robot.
+
+## Circuit Diagram
+![Ckt Diagram](https://github.com/dmdhrumilmistry/SecureBluetoothControlledRobot/blob/main/.images/ckt-diagram.jpg?raw=True)
 
 ## Pre-Installation Steps
   - Install Arduino IDE
@@ -19,5 +22,5 @@ Many available projects on Bluetooth controlled robots are unsecure, an authoriz
  
 ## TODO
   - [x] Choose and Add License
-  - [ ] Upload Circuit Diagram 
+  - [x] Upload Circuit Diagram 
   - [x] Upload compiled Android Application
