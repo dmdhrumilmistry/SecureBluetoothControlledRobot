@@ -20,7 +20,3 @@ Many available projects on Bluetooth controlled robots are unsecure, an authoriz
   - Connect Android Device with board using Application
   - Test controls
  
-## TODO
-  - [x] Choose and Add License
-  - [x] Upload Circuit Diagram 
-  - [x] Upload compiled Android Application
