@@ -1,4 +1,4 @@
-//Modied By ProfessorHulk And DM Dhrumil Mistry
+//Modied By ProfessorHulk And dmdhrumilmistry
 //The One and Only Smasher Tech (TOAOST)
 //Install AFMotor.h library before uploading code to Arduino Board
 
